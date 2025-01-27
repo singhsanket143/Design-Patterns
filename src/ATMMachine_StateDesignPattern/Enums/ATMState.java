@@ -3,6 +3,7 @@ package ATMMachine_StateDesignPattern.Enums;
 public enum ATMState {
 
     READY_FOR_TRANSACTION,
+    INSERTED_CARD,
     READ_CARD_DETAILS_AND_PIN,
     DISPENSING_CASH,
     EJECTING_CARD,

@@ -5,7 +5,7 @@ import ATMMachine_StateDesignPattern.models.Card;
 
 public interface State {
 
-    int initTransaction();
+    void initTransaction();
 
     boolean readCardDetailsAndPin(Card card); // returns true if card is valid and false otherwise
 
@@ -13,7 +13,7 @@ public interface State {
 
     void ejectCard();
 
-    boolean readCashWithdrawDetails(int transactionId, int amount); // returns true if cash withdrawl details are valid and false otherwise
+    boolean readCashWithdrawDetails(int transactionId, int amount); // returns true if cash withdrawal details are valid and false otherwise
 
     ATMState getState();
 }
