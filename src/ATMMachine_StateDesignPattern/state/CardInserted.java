@@ -21,7 +21,7 @@ public class CardInserted implements State {
         System.out.println("Reading Details");
         System.out.println("Enter Pin");
         atm.setCurrentState(ATMState.READ_CARD_DETAILS_AND_PIN);
-        atm.setState(atm.getReadCardDetailsState());
+        atm.setState(new ReadCardDetails(atm));
         // Validating Pin
         //if valid
         return false;

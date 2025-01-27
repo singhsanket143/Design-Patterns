@@ -25,7 +25,7 @@ public class CashDispense implements State {
     public int dispenseCash(int transactionId) {
 
         atm.setCurrentState(ATMState.DISPENSING_CASH);
-        atm.setState(atm.getEjectCardState());
+        atm.setState(new EjectCard(atm));
         return 0;
     }
 

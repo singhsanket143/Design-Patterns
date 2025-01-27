@@ -25,7 +25,7 @@ public class ReadCardDetails implements State {
 //
 //        }
         atm.setCurrentState(ATMState.READING_CASH_WITHDRAW_DETAILS);
-        atm.setState(atm.getCashWithDrawalState());
+        atm.setState(new CashWithDrawal(atm));
 
         return false;
     }
@@ -40,7 +40,7 @@ public class ReadCardDetails implements State {
     public void ejectCard() {
         // if pressed cancel transaction
         atm.setCurrentState(ATMState.EJECTING_CARD);
-        atm.setState(atm.getEjectCardState());
+        atm.setState(new EjectCard(atm));
     }
 
     @Override

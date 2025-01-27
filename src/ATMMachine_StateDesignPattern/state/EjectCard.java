@@ -28,7 +28,7 @@ public class EjectCard implements State {
     @Override
     public void ejectCard() {
         atm.setCurrentState(ATMState.READY_FOR_TRANSACTION);
-        atm.setState(atm.getReadyForTransactionState());
+        atm.setState(new ReadyForTransaction(atm));
 
     }
 

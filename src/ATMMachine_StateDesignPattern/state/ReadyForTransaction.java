@@ -24,7 +24,7 @@ public class ReadyForTransaction implements State{
 
         // user presses start transaction change the state to
         atm.setCurrentState(ATMState.INSERTED_CARD);
-        atm.setState(atm.getCardInsertedState());
+        atm.setState(new CardInserted(atm));
     }
 
     @Override

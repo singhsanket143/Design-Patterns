@@ -38,7 +38,7 @@ public class CashWithDrawal implements State {
         //banking validations and all
         //if all good
         atm.setCurrentState(ATMState.READING_CASH_WITHDRAW_DETAILS);
-        atm.setState(atm.getCardInsertedState());
+        atm.setState(new CashDispense(atm));
         return false;
     }
 
