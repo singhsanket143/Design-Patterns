@@ -1,5 +1,7 @@
 package ATMMachine_StateDesignPattern.models;
 
+import ATMMachine_StateDesignPattern.Enums.CardType;
+
 public class Card {
 
     private final long cardNumber;
@@ -8,11 +10,11 @@ public class Card {
 
     private final String name;
 
-    private final String cardType;
+    private final CardType cardType;
 
     private final String bankName;
 
-    public Card(long cardNumber, int pin, String name, String cardType, String bankName) {
+    public Card(long cardNumber, int pin, String name, CardType cardType, String bankName) {
         this.cardNumber = cardNumber;
         this.pin = pin;
         this.name = name;
@@ -36,7 +38,7 @@ public class Card {
         return name;
     }
 
-    public String getCardType() {
+    public CardType getCardType() {
         return cardType;
     }
 

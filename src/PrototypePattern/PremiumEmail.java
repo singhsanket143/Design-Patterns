@@ -1,6 +1,7 @@
 package PrototypePattern;
 
-public class PremiumEmail extends Email {
+public class PremiumEmail extends Email implements Prototype<PremiumEmail> {
+
 
     private String cc;
     private String bcc;
@@ -18,11 +19,10 @@ public class PremiumEmail extends Email {
         this.bcc = email.bcc;
     }
 
-    // Getters and Setters
-    @Override
-    public PremiumEmail copy() {
-        return new PremiumEmail(this); // calling your copy constructor
-    }
+//    @Override
+//    public PremiumEmail copy() {
+//        return new PremiumEmail(this);
+//    }
 
     public String getCc() {
         return cc;

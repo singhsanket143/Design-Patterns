@@ -24,11 +24,10 @@ public class Email implements Prototype<Email> {
 
     @Override
     public Email copy() {
-        return new Email(this); // calling your copy constructor
+        return new Email(this);
     }
 
     // Getters and Setters
-
     public String getSender() {
         return sender;
     }

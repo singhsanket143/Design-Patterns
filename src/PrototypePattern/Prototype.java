@@ -1,6 +1,5 @@
 package PrototypePattern;
 
-public interface Prototype<T extends Prototype<T>> {
-
+public interface Prototype<T> {
     T copy();
 }
