@@ -33,11 +33,12 @@ public class DispensingCashState implements State {
         boolean isTxnSuccessful = manager.doTransaction(card, amount, transactionId);
         if(isTxnSuccessful) {
             this.cashDispenserService.dispenseCash(this.atm, amount);
-            this.atm.changeState(new EjectingCardState(this.atm));
+
         } else {
             System.out.println("Something went wrong");
-            this.atm.changeState(new ReadyForTransactionState(this.atm));
         }
+        this.atm.changeState(new EjectingCardState(this.atm));
+
         return amount;
     }
 

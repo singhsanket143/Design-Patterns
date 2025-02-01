@@ -26,7 +26,7 @@ public class ReadCardDetailsAndPinState implements State {
         if(isCardValid) {
             this.atm.changeState(new ReadingCashWithdrawlDetailsState(this.atm));
         } else {
-            this.atm.changeState(new ReadyForTransactionState(this.atm));
+            this.atm.changeState(new EjectingCardState(this.atm));
         }
         return isCardValid;
     }
