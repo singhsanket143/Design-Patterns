@@ -10,7 +10,7 @@ public class DebitCardManagerService implements CardManagerService{
     }
 
     @Override
-    public boolean validateWithdrawl(Card card, double amount) {
+    public boolean validateWithdrawl(int transactionId, double amount) {
         // ideally we should make these also connect to API
         return true;
     }

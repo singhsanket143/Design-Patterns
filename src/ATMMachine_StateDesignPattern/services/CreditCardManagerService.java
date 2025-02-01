@@ -9,7 +9,7 @@ public class CreditCardManagerService implements CardManagerService{
     }
 
     @Override
-    public boolean validateWithdrawl(Card card, double amount) {
+    public boolean validateWithdrawl(int transactionId, double amount) {
         return true;
     }
 

@@ -1,6 +1,7 @@
 package ATMMachine_StateDesignPattern.apis;
 
 import ATMMachine_StateDesignPattern.DTO.CreateTransactionRequestDTO;
+import ATMMachine_StateDesignPattern.DTO.GetATMAmountRequestDTO;
 import ATMMachine_StateDesignPattern.DTO.UpdateATMStateRequestDTO;
 
 public class NodeBackendAPI implements BackendAPI {
@@ -25,6 +26,11 @@ public class NodeBackendAPI implements BackendAPI {
         // Assume that there is the implementation that calls the backend to update the state of the ATM
 
         return true; // mimiced response
+    }
+
+    @Override
+    public int getATMAMount(GetATMAmountRequestDTO getATMAmountRequestDTO) {
+        return 10000;
     }
 
 }
