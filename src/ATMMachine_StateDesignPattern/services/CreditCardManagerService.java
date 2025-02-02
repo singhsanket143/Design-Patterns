@@ -15,6 +15,7 @@ public class CreditCardManagerService implements CardManagerService{
 
     @Override
     public boolean doTransaction(Card card, double amount, int transactionId) {
+        // maybe we could have utilised the methods of card interfaces
         return true;
     }
 }
