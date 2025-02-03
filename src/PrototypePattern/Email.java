@@ -1,33 +1,32 @@
 package PrototypePattern;
-
-public class Email implements Prototype<Email> {
+public abstract class Email implements Prototype<Email> {
 
     private String sender;
     private String receiver;
     private String subject;
     private String body;
 
-    Email(String sender, String receiver, String subject, String body) {
+    // Regular constructor
+    public Email(String sender, String receiver, String subject, String body) {
         this.sender = sender;
         this.receiver = receiver;
         this.subject = subject;
         this.body = body;
     }
 
-    //Copy Constructor
-    Email(Email email) {
-        this.sender = email.sender;
-        this.receiver = email.receiver;
-        this.subject = email.subject;
-        this.body = email.body;
+    // Copy constructor
+    public Email(Email source) {
+        this.sender = source.sender;
+        this.receiver = source.receiver;
+        this.subject = source.subject;
+        this.body = source.body;
     }
 
+    // Force all subclasses to provide their own copy logic
     @Override
-    public Email copy() {
-        return new Email(this);
-    }
+    public abstract Email copy();
 
-    // Getters and Setters
+    // Getters / Setters
     public String getSender() {
         return sender;
     }
@@ -66,5 +65,4 @@ public class Email implements Prototype<Email> {
         System.out.println("Subject: " + subject);
         System.out.println("Body: " + body);
     }
-
 }

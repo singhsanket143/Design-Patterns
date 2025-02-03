@@ -1,29 +1,30 @@
 package PrototypePattern;
-
-public class PremiumEmail extends Email implements Prototype<PremiumEmail> {
-
+public class PremiumEmail extends Email {
 
     private String cc;
     private String bcc;
 
-    PremiumEmail(String sender, String receiver, String subject, String body, String cc, String bcc) {
+    // Regular constructor
+    public PremiumEmail(String sender, String receiver, String subject, String body, String cc, String bcc) {
         super(sender, receiver, subject, body);
         this.cc = cc;
         this.bcc = bcc;
     }
 
-    //Copy Constructor
-    PremiumEmail(PremiumEmail email) {
-        super(email);
-        this.cc = email.cc;
-        this.bcc = email.bcc;
+    // Copy constructor
+    private PremiumEmail(PremiumEmail source) {
+        super(source);   // Calls Email(Email source)
+        this.cc = source.cc;
+        this.bcc = source.bcc;
     }
 
-//    @Override
-//    public PremiumEmail copy() {
-//        return new PremiumEmail(this);
-//    }
+    // Required override of the abstract copy() method
+    @Override
+    public PremiumEmail copy() {
+        return new PremiumEmail(this);
+    }
 
+    // Additional getters & setters
     public String getCc() {
         return cc;
     }
@@ -40,7 +41,9 @@ public class PremiumEmail extends Email implements Prototype<PremiumEmail> {
         this.bcc = bcc;
     }
 
+    @Override
     public void displayEmail() {
+        // Reuse the parent display logic, then add extras
         super.displayEmail();
         System.out.println("CC: " + cc);
         System.out.println("BCC: " + bcc);
