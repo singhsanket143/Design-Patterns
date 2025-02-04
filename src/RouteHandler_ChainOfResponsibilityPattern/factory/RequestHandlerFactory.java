@@ -1,13 +1,15 @@
 package RouteHandler_ChainOfResponsibilityPattern.factory;
 
 import RouteHandler_ChainOfResponsibilityPattern.handlers.*;
+import RouteHandler_ChainOfResponsibilityPattern.services.RateLimitterService;
+import RouteHandler_ChainOfResponsibilityPattern.services.RateLimitterServiceImpl;
 import RouteHandler_ChainOfResponsibilityPattern.services.TokenServiceImpl;
 
 public class RequestHandlerFactory {
 
     public static RequestHandler getHandlersForCreateTodo() {
 
-        return new ValidateParamsHandler(
+        return new RateLimittingHandler(new ValidateParamsHandler(
                 new ValidateBodyHandler(
                         new AuthorisationHandler(
                                 new AuthenticationHandler(
@@ -15,11 +17,11 @@ public class RequestHandlerFactory {
                                 )
                         )
                 )
-        );
+        ), new RateLimitterServiceImpl());
     }
 
     public static RequestHandler getHandlerForUpdateTodo() {
-        return new ValidateParamsHandler(
+        return new RateLimittingHandler(new ValidateParamsHandler(
                 new HandlerB(
                     new ValidateBodyHandler(
                             new AuthorisationHandler(
@@ -29,6 +31,6 @@ public class RequestHandlerFactory {
                             )
                     )
                 )
-        );
+        ), new RateLimitterServiceImpl());
     }
 }
