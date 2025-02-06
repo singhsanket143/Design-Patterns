@@ -1,4 +1,4 @@
-package CricBuzz.models;
+package CricBuzz_ObserverPattern_Pubsub.models;
 
 public class Innings {
 

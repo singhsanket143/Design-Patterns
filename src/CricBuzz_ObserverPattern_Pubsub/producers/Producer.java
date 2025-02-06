@@ -1,7 +1,7 @@
-package CricBuzz.producers;
+package CricBuzz_ObserverPattern_Pubsub.producers;
 
-import CricBuzz.models.Match;
-import CricBuzz.subscribers.Subscriber;
+import CricBuzz_ObserverPattern_Pubsub.models.Match;
+import CricBuzz_ObserverPattern_Pubsub.subscribers.Subscriber;
 
 public interface Producer {
 

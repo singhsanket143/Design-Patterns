@@ -1,8 +1,8 @@
-package CricBuzz.subscribers;
+package CricBuzz_ObserverPattern_Pubsub.subscribers;
 
-import CricBuzz.models.Innings;
-import CricBuzz.models.Match;
-import CricBuzz.producers.Producer;
+import CricBuzz_ObserverPattern_Pubsub.models.Innings;
+import CricBuzz_ObserverPattern_Pubsub.models.Match;
+import CricBuzz_ObserverPattern_Pubsub.producers.Producer;
 
 import java.util.List;
 
